@@ -36,7 +36,7 @@ function Nav({ className }: { className?: string }) {
               height={24}
               priority
             />
-            <p className="font-bold tracking-tight">Phasal Combinator</p>
+            <p className="font-bold tracking-tight">Agro Pact</p>
           </Link>
 
           <div className="flex items-center gap-4 justify-center">
