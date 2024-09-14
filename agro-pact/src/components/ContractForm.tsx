@@ -25,6 +25,7 @@ export default function ContractForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Convert quantity and pricePerKg to numbers
     const contractData = {
       walletAddress,
       cropType,
@@ -46,7 +47,8 @@ export default function ContractForm() {
       alert("Contract created successfully!");
       router.push("/contracts");
     } else {
-      alert("Failed to create contract");
+      const errorData = await res.json();
+      alert(`Failed to create contract: ${errorData.message}`);
     }
   };
 
@@ -108,9 +110,9 @@ export default function ContractForm() {
             />
           </div>
           <div>
-            <Label htmlFor="phone">Phone Number</Label>
+            <Label htmlFor="phoneNumber">Phone Number</Label>
             <Input
-              id="phone"
+              id="phoneNumber"
               type="text"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
