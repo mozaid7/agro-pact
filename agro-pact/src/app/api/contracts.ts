@@ -1,22 +1,30 @@
+import prisma from "@/lib/prisma";
 import { NextApiRequest, NextApiResponse } from "next";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
-    const { walletAddress, cropType, quantity, deadline } = req.body;
+    const {
+      walletAddress,
+      cropType,
+      quantity,
+      deadline,
+      phoneNumber,
+      pricePerKg,
+    } = req.body;
 
     try {
       const contract = await prisma.contract.create({
         data: {
           walletAddress,
           cropType,
-          quantity,
+          quantity: parseFloat(quantity),
           deadline: new Date(deadline),
+          phoneNumber, // Update here
+          pricePerKg: parseFloat(pricePerKg),
+          userId: req.body.userId,
         },
       });
       res.status(200).json(contract);
