@@ -27,11 +27,6 @@ export default function SignIn() {
   return (
     <>
       <div className="flex items-center justify-center min-h-screen bg-[#f8ece4] text-black-100">
-        {/* <div className="mb-56">
-          <div>Website Name</div>
-
-          <div>mini description of website</div>
-        </div> */}
         <div className="bg-white shadow-lg rounded-2xl p-10 flex items-center gap-16 border-8 border-white">
           <form onSubmit={handleSignIn} className="flex flex-col gap-6">
             <input
@@ -64,7 +59,7 @@ export default function SignIn() {
             </button>
 
             <button
-              type="submit"
+              type="button"
               className="bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition-all"
               onClick={() => router.push("/signup")}
             >
