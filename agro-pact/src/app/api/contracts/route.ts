@@ -10,7 +10,27 @@ async function getUserIdFromSessionOrContext(
 ): Promise<number> {
   return 1;
 }
-
+export async function GET(req: NextRequest) {
+  try {
+    const contracts = await prisma.contract.findMany();
+    return NextResponse.json(contracts);
+  } catch (error) {
+    console.error("Error fetching contracts:", error);
+    if (error instanceof Error) {
+      console.error("Error fetching contracts:", error.message);
+      return NextResponse.json(
+        { message: "Failed to fetch contracts", error: error.message },
+        { status: 500 }
+      );
+    } else {
+      console.error("Unknown error:", error);
+      return NextResponse.json(
+        { message: "Failed to fetch contracts", error: "Unknown error" },
+        { status: 500 }
+      );
+    }
+  }
+}
 export async function POST(req: NextRequest) {
   try {
     const data = await req.json();
