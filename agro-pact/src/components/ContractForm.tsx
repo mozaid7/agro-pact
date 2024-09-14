@@ -18,6 +18,8 @@ export default function ContractForm() {
   const [cropType, setCropType] = useState("");
   const [quantity, setQuantity] = useState("");
   const [deadline, setDeadline] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [pricePerKg, setPricePerKg] = useState("");
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -28,6 +30,8 @@ export default function ContractForm() {
       cropType,
       quantity: parseFloat(quantity),
       deadline,
+      phoneNumber, // Use correct field name
+      pricePerKg: parseFloat(pricePerKg),
     };
 
     const res = await fetch("/api/contracts", {
@@ -54,14 +58,14 @@ export default function ContractForm() {
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <Label htmlFor="walletAddress">ETH Wallet Address</Label>
+            <Label htmlFor="walletAddress"> Wallet Address</Label>
             <Input
               id="walletAddress"
               type="text"
               value={walletAddress}
               onChange={(e) => setWalletAddress(e.target.value)}
               required
-              placeholder="Enter your Ethereum wallet address"
+              placeholder="Enter your wallet address"
               className="rounded-2xl"
             />
           </div>
@@ -103,8 +107,35 @@ export default function ContractForm() {
               className="rounded-2xl"
             />
           </div>
+          <div>
+            <Label htmlFor="phone">Phone Number</Label>
+            <Input
+              id="phone"
+              type="text"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              required
+              placeholder="Enter your phone number"
+              className="rounded-2xl"
+            />
+          </div>
+          <div>
+            <Label htmlFor="pricePerKg">Price Per Kg </Label>
+            <Input
+              id="pricePerKg"
+              type="number"
+              value={pricePerKg}
+              onChange={(e) => setPricePerKg(e.target.value)}
+              required
+              placeholder="Enter price per kg"
+              className="rounded-2xl"
+            />
+          </div>
           <CardFooter>
-            <Button type="submit" className="w-full bg-teal-200 text-black hover:bg-black hover:text-white rounded-2xl">
+            <Button
+              type="submit"
+              className="w-full bg-teal-200 text-black hover:bg-black hover:text-white rounded-2xl"
+            >
               Create Contract
             </Button>
           </CardFooter>
