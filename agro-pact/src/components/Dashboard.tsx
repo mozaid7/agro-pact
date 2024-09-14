@@ -5,8 +5,6 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { MdOutlineTravelExplore } from "react-icons/md";
 import { TbHistoryToggle } from "react-icons/tb";
 
-
-
 const Dashboard = () => {
   return (
     <div className="flex flex-col justify-between items-center">
