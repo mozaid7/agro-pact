@@ -30,7 +30,7 @@ export default function ContractForm() {
       cropType,
       quantity: parseFloat(quantity),
       deadline,
-      phoneNumber, // Use correct field name
+      phoneNumber, 
       pricePerKg: parseFloat(pricePerKg),
     };
 
@@ -44,9 +44,10 @@ export default function ContractForm() {
 
     if (res.ok) {
       alert("Contract created successfully!");
-      router.push("/contracts");
+      router.push("/liveContracts");
     } else {
-      alert("Failed to create contract");
+      const errorData = await res.json();
+      alert(`Failed to create contract: ${errorData.message}`);
     }
   };
 
@@ -108,9 +109,9 @@ export default function ContractForm() {
             />
           </div>
           <div>
-            <Label htmlFor="phone">Phone Number</Label>
+            <Label htmlFor="phoneNumber">Phone Number</Label>
             <Input
-              id="phone"
+              id="phoneNumber"
               type="text"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
