@@ -25,7 +25,7 @@ const Hero = () => {
     <ClientNavbar />
     {session ? <Dashboard /> : null}
     {session ? null :
-      <section className="bg-[#04583a] border-8 border-[#68b589] h-auto pb-6 min-w-full mt-6 px-8 md:px-20 pt-20 text-white rounded-3xl">
+      <section className="bg-[#04583a] border-8 border-transparent-white h-auto pb-6 min-w-full mt-6 px-8 md:px-20 pt-20 text-white rounded-3xl">
         <div className="flex items-center justify-start gap-1 pl-2"><BiLeaf className="size-10 md:size-5 text-white" /><span className="font-semibold tracking-tight text-xs md:text-base">Connecting farmers and buyers with transparent & secure contracts</span>
         </div>
         <h1 className="text-2xl md:text-8xl font-light tracking-tighter font-sans pb-4 md:pb-6">Every grain holds value & purpose, ensuring none go to waste & turning that purpose into profit.</h1>
