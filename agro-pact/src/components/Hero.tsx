@@ -23,7 +23,7 @@ const Hero = () => {
   }
 
   return <>
-    {session ? null : <ClientNavbar />}
+    <ClientNavbar />
     {session ? <Dashboard /> : null}
 
     <section className="bg-[#0c5934] border-8 border-[#5ee4a396] min-h-full min-w-full mt-6 px-20 pt-20 text-white rounded-3xl">
