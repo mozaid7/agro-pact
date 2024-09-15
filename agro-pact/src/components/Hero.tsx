@@ -25,7 +25,7 @@ const Hero = () => {
   return <>
     <ClientNavbar />
     {session ? <Dashboard /> : null}
-
+    {session ? null :
     <section className="bg-[#0c5934] border-8 border-[#5ee4a396] min-h-full min-w-full mt-6 px-20 pt-20 text-white rounded-3xl">
       <div className="flex items-center justify-start gap-1 pl-2"><BiLeaf className="size-5 text-white" /><span className="font-semibold tracking-tight ">Connecting farmers and buyers with transparent & secure contracts</span>
       </div>
@@ -71,7 +71,7 @@ const Hero = () => {
     </section>
 
 
-
+    }
 
 
   </>;
