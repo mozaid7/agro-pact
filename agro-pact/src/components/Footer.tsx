@@ -10,9 +10,6 @@ const Footer = () => {
           <h1>Company</h1>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit quia distinctio et sint? Quod corrupti, est temporibus obcaecati quasi rem sit at quidem debitis odit perferendis voluptatem a labore repellendus?</p>
           </div>
-
-          
-
         </div>
         <div></div>
       </div>

@@ -42,10 +42,10 @@ function Nav({ className }: { className?: string }) {
           <div className="flex items-center gap-4 justify-center">
             <MenuItem setActive={setActive} active={active} item="What we do?">
               <div className="flex flex-col space-y-4 text-sm">
-                <HoveredLink href="/objective">Our Goal</HoveredLink>
-                <HoveredLink href="/help">Our Work</HoveredLink>
-                <HoveredLink href="/contact">Why choose us</HoveredLink>
-                <HoveredLink href="/support">Resources</HoveredLink>
+                <HoveredLink href="/about">Our Goal</HoveredLink>
+                <HoveredLink href="/about">Our Work</HoveredLink>
+                <HoveredLink href="/about">Why choose us</HoveredLink>
+                <HoveredLink href="/about">Resources</HoveredLink>
               </div>
             </MenuItem>
             <MenuItem setActive={setActive} active={active} item="Contract">
