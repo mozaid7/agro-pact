@@ -29,7 +29,7 @@ function Nav({ className }: { className?: string }) {
         <div className="grid grid-cols-3 w-full">
           <Link href={"/"} className="flex gap-2 items-center justify-start">
             <Image
-              src="../phasalCombinatorLogo2.svg"
+              src="../agropact.svg"
               alt="Phasal Combinator Logo"
               className="overflow-hidden"
               width={24}
