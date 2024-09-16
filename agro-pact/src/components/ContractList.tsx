@@ -64,7 +64,7 @@ export default function ContractList() {
                           <strong>Phone Number:</strong> {contract.phoneNumber}
                         </p>
                         <p>
-                          <strong>Price Per Kg:</strong> {contract.pricePerKg} ₹
+                          <strong>Price Per Kg: ₹</strong> {contract.pricePerKg}
                         </p>
                       </li>
                     </div>
