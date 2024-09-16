@@ -25,13 +25,13 @@ const Hero = () => {
     <ClientNavbar />
     {session ? <Dashboard /> : null}
     {session ? null :
-      <section className="bg-[#04583a] border-8 border-transparent-white h-auto pb-6 min-w-full mt-6 px-8 md:px-20 pt-20 text-white rounded-3xl">
+      <section className="bg-[#0c5934] border-8 border-[#5ee4a396] h-auto pb-6 min-w-full mt-6 px-8 md:px-20 pt-20 text-white rounded-3xl">
         <div className="flex items-center justify-start gap-1 pl-2"><BiLeaf className="size-10 md:size-5 text-white" /><span className="font-semibold tracking-tight text-xs md:text-base">Connecting farmers and buyers with transparent & secure contracts</span>
         </div>
         <h1 className="text-2xl md:text-8xl font-light tracking-tighter font-sans pb-4 md:pb-6">Every grain holds value & purpose, ensuring none go to waste & turning that purpose into profit.</h1>
         <p className="md:absolute md:pl-5 text-sm md:text-base md:w-3/5 md:flex justify-center items-center ">
           <MdOutlineArrowOutward className="size-8 md:size-24 top-0 left-0" />
-          This blockchain-based marketplace ensures farmers a constant income with no losses through secure contract farming. It maximizes efficiency and better utilization of time, benefiting both farmers and buyers.
+          This marketplace ensures farmers a constant income with no losses through secure contract farming. It maximizes efficiency and better utilization of time, benefiting both farmers and buyers.
         </p>
         <div className="md:pb-10" ></div>
 
