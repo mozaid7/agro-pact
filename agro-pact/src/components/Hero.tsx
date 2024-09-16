@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React from "react";
 import Dashboard from "./Dashboard";
-import ClientNavbar from "./ClientNav";
+import ClientNavbar from "./clientNav";
 import { BiLeaf } from "react-icons/bi";
 import Image from "next/image";
 import { TbPointFilled } from "react-icons/tb";
@@ -19,7 +19,18 @@ const Hero = () => {
       router.push("/signin");
     }
   };
+  function rgb(
+    arg0: number,
+    arg1: number,
+    arg2: number
+  ): import("csstype").Property.Color | undefined {
+    throw new Error("Function not implemented.");
+  }
 
+  return (
+    <>
+      <ClientNavbar />
+      {session ? <Dashboard /> : null}
 
   return <>
     <ClientNavbar />
@@ -36,9 +47,15 @@ const Hero = () => {
         <div className="md:pb-10" ></div>
 
         <section className="relative w-full pt-[40%] h-0">
-          <svg className="absolute top-0 left-0" width="100%" height="100%" viewBox="0 0 100 40">
+          <svg
+            className="absolute top-0 left-0"
+            width="100%"
+            height="100%"
+            viewBox="0 0 100 40"
+          >
             <clipPath id="border">
-              <path id="main_img_path"
+              <path
+                id="main_img_path"
                 d="M 7 5
                 L 85 5
                 A 2.5 2.5 0 0 0 87.5 2.5
@@ -59,16 +76,21 @@ const Hero = () => {
                 A 2.5 2.5 0 0 1 0 15
                 L 0 7.5
                 A 2.5 2.5 0 0 1 2.5 5
-            ">
-              </path>
+            "
+              ></path>
             </clipPath>
-            <image clipPath="url(#border)" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xlinkHref="https://plus.unsplash.com/premium_photo-1722682239737-4bc41d2b8c0d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></image>
+            <image
+              clipPath="url(#border)"
+              preserveAspectRatio="xMidYMid slice"
+              width="100%"
+              height="100%"
+              xlinkHref="https://plus.unsplash.com/premium_photo-1722682239737-4bc41d2b8c0d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            ></image>
           </svg>
         </section>
       </section>
-    }
-
-  </>;
+    </>
+  );
 };
 
 export default Hero;
