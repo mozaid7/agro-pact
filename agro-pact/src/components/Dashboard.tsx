@@ -7,8 +7,8 @@ import { TbHistoryToggle } from "react-icons/tb";
 
 const Dashboard = () => {
   return (
-    <div className="flex flex-col justify-start items-center">
-      <div className="w-64 bg-white h-auto p-6 flex flex-col justify-between border-8 border-white mt-28 rounded-3xl shadow-lg">
+    <div className="fixed flex top-40 left-10 justify-start items-center">
+      <div className="w-64 bg-white h-auto p-6 flex flex-col justify-between border-8 border-white rounded-3xl shadow-lg">
         <div>
           <span className="text-lg font-semibold tracking-tight py-4 flex justify-start items-center gap-2">
             <GrCube className="size-6" />
