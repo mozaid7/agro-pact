@@ -57,9 +57,9 @@ const features = [
   },
 ];
 
-export async function FeaturesBento() {
+export default function FeaturesBento() {
   return (
-    <BentoGrid className="lg:grid-rows-3">
+    <BentoGrid className="lg:grid-rows-2 ">
       {features.map((feature) => (
         <BentoCard key={feature.name} {...feature} />
       ))}
