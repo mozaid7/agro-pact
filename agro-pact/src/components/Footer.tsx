@@ -32,7 +32,7 @@ const currentYear = new Date().getFullYear();
 const Footer = () => (
 
 
-  <footer className="mt-12 border-8 border-transparent-white rounded-3xl py-12 md:py-[5.6rem] text-sm bg-[#1e1b19] text-white md:px-12">
+  <footer className="mt-12 border-8 border-black rounded-3xl py-12 md:py-[5.6rem] text-sm bg-[#1e1b19] text-white md:px-6">
     <Container className="flex flex-col justify-between lg:flex-row">
       <div>
         <div className="flex h-full flex-row justify-between lg:flex-col">
