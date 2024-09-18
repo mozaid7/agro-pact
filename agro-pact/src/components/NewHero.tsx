@@ -17,15 +17,15 @@ const SECTION_HEIGHT = 200;
 const Hero = () => {
     return (
         <>
-            <section
-                style={{ height: `calc(${SECTION_HEIGHT}px + 70vh)` }}
-                className="relative w-full"
-            >
                 <MouseImageTrail
                     renderImageBuffer={50}
                     rotationRange={25}
                     images={[
-                        // "/imgs/active/1.jpg",
+                        "./farm1.svg",
+                        "./farm2.svg",
+                        "./farm3.svg",
+                        "./farm4.svg",
+                        "./farm5.svg",
                         // "/imgs/active/2.jpg",
                         // "/imgs/active/3.jpg",
                         // "/imgs/active/4.jpg",
@@ -43,6 +43,10 @@ const Hero = () => {
                         // "/imgs/active/16.jpg",
                     ]}
                 >
+                        <section
+                            style={{ height: `calc(${SECTION_HEIGHT}px + 70vh)` }}
+                            className="relative w-full"
+                        >
                     <div className="flex items-center justify-center pt-24 gap-2">
 
                         <motion.div
@@ -70,10 +74,10 @@ const Hero = () => {
                             </motion.h1>
                         </motion.div>
                     </div>
-                </MouseImageTrail>
             </section>
+                </MouseImageTrail>
 
-            <section className="relative my-16">
+            <section className="relative my-16 px-4 md:px-24 sm:px-10">
                 <Safari url="agropact.com" src="./farm2.svg" className="size-full" />
                 {/* <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-zinc-950/0 to-[#e4efe6]" /> */}
             </section>

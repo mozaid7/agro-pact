@@ -12,7 +12,7 @@ import { useSession } from "next-auth/react";
 export default function Home() {
   const { data: session } = useSession();
   return (
-    <main className="flex flex-col min-h-screen py-20 px-4 md:px-24 sm:px-10 relative justify-between overflow-hidden  dark:bg-green-950 bg-[#e4efe6]">
+    <main className="flex flex-col min-h-screen mt-24 mb-8 relative justify-between overflow-hidden  dark:bg-green-950 bg-[#e4efe6]">
       {session ?
         <>
           <ClientNavbar />
@@ -24,10 +24,13 @@ export default function Home() {
         <>
           <NewHero />
           {/* <Hero /> */}
+          <div className="px-4 md:px-24 sm:px-10">
+
           <Services />
           <FeaturesBento />
           <FaqAccordian />
           <Footer />
+          </div>
         </>
       }
     </main>
