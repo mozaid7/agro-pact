@@ -1,5 +1,6 @@
 "use client";
 
+// import FeaturesBento from "@/components/FeaturesBento";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -8,11 +9,12 @@ import { useSession } from "next-auth/react";
 export default function Home() {
   const { data: session } = useSession();
   return (
-    <main className="flex flex-col min-h-screen py-8 px-4 md:px-24 relative justify-between overflow-hidden sm:px-10">
+    <main className="flex flex-col min-h-screen py-8 px-4 md:px-24 relative justify-between overflow-hidden sm:px-10 dark:bg-green-950 bg-[#e4efe6]">
       <Hero />
       {session ? null :
       <>
       <Services/>
+      {/* <FeaturesBento /> */}
       <Footer/>
       </>
       }
