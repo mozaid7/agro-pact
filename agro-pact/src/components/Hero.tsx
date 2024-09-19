@@ -1,8 +1,9 @@
+"use client"
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React from "react";
 import Dashboard from "./Dashboard";
-import ClientNavbar from "./clientNav";
+import ClientNavbar from "./ClientNav";
 import { BiLeaf } from "react-icons/bi";
 import { MdOutlineArrowOutward } from "react-icons/md";
 
@@ -21,6 +22,7 @@ const Hero = () => {
   return (
     <>
       <ClientNavbar />
+
       {session ? <Dashboard /> : null}
       {!session && (
         <section className="bg-[#0c5934] border-8 border-[#5ee4a396] h-auto pb-6 min-w-full mt-6 px-8 md:px-20 pt-20 text-white rounded-3xl z-10">
