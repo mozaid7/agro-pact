@@ -5,12 +5,11 @@ import { ReactLenis } from "@studio-freight/react-lenis";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Safari from "./ui/safari";
-import { MouseImageTrail } from "./ui/mouse-image-trail";
 import { BorderBeam } from "./ui/border-beam";
 
 const fadeInVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 1 } }
+    visible: { opacity: 1, transition: { duration: 0.5 } }
 };
 
 const SECTION_HEIGHT = 200;
@@ -18,32 +17,6 @@ const SECTION_HEIGHT = 200;
 const Hero = () => {
     return (
         <div className="z-0">
-            {/* <MouseImageTrail
-                renderImageBuffer={50}
-                rotationRange={25}
-                images={[
-                    "./farm1.svg",
-                    "./farm2.svg",
-                    "./farm3.svg",
-                    "./farm4.svg",
-                    "./farm5.svg",
-                    // "/imgs/active/2.jpg",
-                    // "/imgs/active/3.jpg",
-                    // "/imgs/active/4.jpg",
-                    // "/imgs/active/5.jpg",
-                    // "/imgs/active/6.jpg",
-                    // "/imgs/active/7.jpg",
-                    // "/imgs/active/8.jpg",
-                    // "/imgs/active/9.jpg",
-                    // "/imgs/active/10.jpg",
-                    // "/imgs/active/11.jpg",
-                    // "/imgs/active/12.jpg",
-                    // "/imgs/active/13.jpg",
-                    // "/imgs/active/14.jpg",
-                    // "/imgs/active/15.jpg",
-                    // "/imgs/active/16.jpg",
-                ]}
-            > */}
                 <section
                     style={{ height: `calc(${SECTION_HEIGHT}px + 70vh)` }}
                     className="relative w-full"
@@ -80,11 +53,10 @@ const Hero = () => {
                         Sign Up to Get Started!
                     </a>
                 </div>
-            {/* </MouseImageTrail> */}
 
 
             <div className="relative my-16 mx-4 md:mx-24 sm:mx-10 ">
-                <Safari url="agropact.com" src="./farm1.svg" className="size-full" />
+                <Safari url="agropact.com" src="./dashboard_demo.svg" className="size-full" />
                 <BorderBeam size={1000} duration={15} delay={9} className="rounded-xl " borderWidth={3.5} colorFrom="#008165" colorTo="#68b589" />
             </div>
             
