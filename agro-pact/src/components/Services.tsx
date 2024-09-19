@@ -22,28 +22,28 @@ const Services = () => {
                             <AiOutlineBulb className=' rounded-xl size-10' />
                         </div>
                         <h2 className='text-3xl py-6'>Create</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quae repellendus debitis aspernatur dicta. e numquam?</p>
+                        <p>Define your requirements by creating a custom contract. Specify the crop type, quantity, and delivery date tailored to your needs, and connect directly with farmers.</p>
                     </div>
                     <div className='hover:bg-[#27272a] hover:text-white flex flex-col'>
                         <div className=' bg-[#008165] text-white mr-auto p-2 rounded-2xl'>
                             <MdOutlineFileUpload className=' rounded-xl size-10' />
                         </div>
                         <h2 className='text-3xl py-6'>Publish</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quae repellendus debitis aspernatur dicta. e numquam?</p>
+                        <p>Once your contract is ready, publish it on our platform using blockchain technology. Ensure secure, transparent, and tamper-proof agreements with farmers.</p>
                     </div>
                     <div className='hover:bg-[#27272a] hover:text-white flex flex-col'>
                         <div className=' bg-[#008165] text-white mr-auto p-2 rounded-2xl'>
                             <PiLeaf className=' rounded-xl size-10' />
                         </div>
                         <h2 className='text-3xl py-6'>Grow</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quae repellendus debitis aspernatur dicta. e numquam?</p>
+                        <p>Browse available contracts, negotiate prices, and agree on delivery deadlines. View and accept the contract & cultivate the crops according to the contract specifications, ensuring high-quality produce and increased profits.</p>
                     </div>
                     <div className='hover:bg-[#27272a] hover:text-white flex flex-col'>
                         <div className=' bg-[#008165] text-white mr-auto p-2 rounded-2xl'>
                             <TbWorldDollar className=' rounded-xl size-10' />
                         </div>
                         <h2 className='text-3xl py-6'>Market</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quae repellendus debitis aspernatur dicta. e numquam?</p>
+                        <p>Expand your reach and get access to fresh produce directly from farmers. This marketplace helps farmers boost profits while buyers receive quality crops right from the source.</p>
                     </div>
                 </div>
             </section>
