@@ -26,55 +26,89 @@ export default function ContractList() {
   }, []);
 
   return (
-    <Card className="max-w-xl mx-auto py-10 bg-white">
-      <CardHeader>
-        <CardTitle>Live Contracts </CardTitle>
-      </CardHeader>
-      <CardContent>
-        {contracts.length === 0 ? (
-          <p>No live contracts found</p>
-        ) : (
-          <div>
-            <div>
-              <ul className="space-y-4">
-                {contracts.map((contract: any) => (
-                  <div className="flex">
-                    <div>
-                      <Button className="bg-red-950 rounded-2xl text-white">
-                        Sign
-                      </Button>
-                    </div>
-                    <div>
-                      <li key={contract.id} className="border p-4 rounded-xl">
-                        <p>
-                          <strong>Wallet Address:</strong>{" "}
-                          {contract.walletAddress}
-                        </p>
-                        <p>
-                          <strong>Crop Type:</strong> {contract.cropType}
-                        </p>
-                        <p>
-                          <strong>Quantity:</strong> {contract.quantity} kg
-                        </p>
-                        <p>
-                          <strong>Deadline:</strong>{" "}
-                          {new Date(contract.deadline).toLocaleDateString()}
-                        </p>
-                        <p>
-                          <strong>Phone Number:</strong> {contract.phoneNumber}
-                        </p>
-                        <p>
-                          <strong>Price Per Kg: ₹</strong> {contract.pricePerKg}
-                        </p>
-                      </li>
-                    </div>
-                  </div>
-                ))}
-              </ul>
-            </div>
+    <div className="max-w-7xl mx-auto py-10 bg-[#e4efe6]">
+      <div className="text-3xl font-bold my-4 font-serif">
+        Contract MarketPlace
+      </div>
+      <div className="flex justify-between mb-4">
+        <div className="flex space-x-2">
+          <div className="bg-white rounded-full px-4 py-2 shadow-md">
+            Rajasthan
           </div>
-        )}
-      </CardContent>
-    </Card>
+          <div className="bg-white rounded-full px-4 py-2 shadow-md">
+            more than 200kg
+          </div>
+        </div>
+        <div className="flex space-x-2">
+          <Button className="bg-green-200 text-green-900 rounded-full px-4 py-2">
+            All
+          </Button>
+          <Button className="bg-green-200 text-green-900 rounded-full px-4 py-2">
+            Open
+          </Button>
+        </div>
+      </div>
+
+      {contracts.length === 0 ? (
+        <p className="text-center">No live contracts found</p>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {contracts.map((contract: any) => (
+            <Card
+              key={contract.id}
+              className="border p-4 rounded-3xl shadow-md bg-white"
+            >
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold">
+                  {contract.cropType.toUpperCase()}
+                </CardTitle>
+                <div className="flex space-x-2 mt-2">
+                  {/* Status Badges */}
+                  <span className="bg-green-200 text-green-800 text-sm px-2 py-1 rounded-full">
+                    Contract open
+                  </span>
+                  <span className="bg-blue-200 text-blue-800 text-sm px-2 py-1 rounded-full">
+                    Seasonal
+                  </span>
+                </div>
+              </CardHeader>
+
+              <CardContent className="mt-4">
+                {/* Contract details */}
+                <div className="flex justify-between mb-2">
+                  <span>START</span>
+                  <span>END</span>
+                </div>
+                <div className="flex justify-between mb-4">
+                  <span>
+                    {new Date(contract.startDate).toLocaleDateString()}
+                  </span>
+                  <span>
+                    {new Date(contract.deadline).toLocaleDateString()}
+                  </span>
+                </div>
+                <p className="text-sm">
+                  <strong>Offered Price: ₹</strong>{" "}
+                  {contract.pricePerKg * contract.quantity}
+                </p>
+                <p className="text-sm">
+                  <strong>For: </strong> {contract.quantity} kg
+                </p>
+
+                <Button className="mt-4 bg-green-600 text-white w-full py-2 rounded-lg hover:text-black-100">
+                  Claim Now
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      )}
+
+      <div className="mt-10 flex justify-center">
+        <Button className="bg-gray-200 text-gray-800 px-6 py-2 rounded-full">
+          See More
+        </Button>
+      </div>
+    </div>
   );
 }

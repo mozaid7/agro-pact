@@ -48,14 +48,14 @@ function Nav({ className }: { className?: string }) {
                 <HoveredLink href="/about">Resources</HoveredLink>
               </div>
             </MenuItem>
-            <MenuItem setActive={setActive} active={active} item="Contract">
+            {/* <MenuItem setActive={setActive} active={active} item="Contract">
               <div className="flex flex-col space-y-4 text-sm">
                 <HoveredLink href="/createContract">
                   Create a Contract
                 </HoveredLink>
-                <HoveredLink href="/liveContracts">Sign a Contract</HoveredLink>
+                <HoveredLink href="/contractsLive">Sign a Contract</HoveredLink>
               </div>
-            </MenuItem>
+            </MenuItem> */}
           </div>
 
           <div className="flex justify-end">
