@@ -18,7 +18,7 @@ const SECTION_HEIGHT = 200;
 const Hero = () => {
     return (
         <div className="z-0">
-            <MouseImageTrail
+            {/* <MouseImageTrail
                 renderImageBuffer={50}
                 rotationRange={25}
                 images={[
@@ -43,7 +43,7 @@ const Hero = () => {
                     // "/imgs/active/15.jpg",
                     // "/imgs/active/16.jpg",
                 ]}
-            >
+            > */}
                 <section
                     style={{ height: `calc(${SECTION_HEIGHT}px + 70vh)` }}
                     className="relative w-full"
@@ -80,7 +80,7 @@ const Hero = () => {
                         Sign Up to Get Started!
                     </a>
                 </div>
-            </MouseImageTrail>
+            {/* </MouseImageTrail> */}
 
 
             <div className="relative my-16 mx-4 md:mx-24 sm:mx-10 ">
