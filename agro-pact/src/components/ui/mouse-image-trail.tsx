@@ -105,7 +105,7 @@ export const MouseImageTrail = ({
 
             {images.map((img, index) => (
                 <img
-                    className="pointer-events-none absolute left-0 top-0 h-48 w-auto rounded-xl border-2 border-white bg-neutral-900 object-cover opacity-0"
+                    className="pointer-events-none absolute left-0 top-0 h-48 w-auto rounded-xl border-2 border-white bg-neutral-900 object-cover opacity-0 z-20"
                     src={img}
                     alt={`Mouse move image ${index}`}
                     key={index}

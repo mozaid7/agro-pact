@@ -88,6 +88,11 @@ const config: Config = {
         purple: "#CBACF9",
       },
       keyframes: {
+          "border-beam": {
+            "100%": {
+              "offset-distance": "100%",
+            },
+          },
         marquee: {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(calc(-100% - var(--gap)))" },
@@ -163,6 +168,7 @@ const config: Config = {
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
+        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         "accordion-up": "accordion-up 0.2s ease-out",
         spotlight: "spotlight 2s ease .75s 1 forwards",
         shimmer: "shimmer 2s linear infinite",
