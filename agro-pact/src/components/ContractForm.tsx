@@ -20,12 +20,13 @@ export default function ContractForm() {
   const [deadline, setDeadline] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [pricePerKg, setPricePerKg] = useState("");
+  const [alertMessage, setAlertMessage] = useState(""); // State for alert message
+  const [alertType, setAlertType] = useState<"success" | "error">(); // State for alert type
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Convert quantity and pricePerKg to numbers
     const contractData = {
       walletAddress,
       cropType,
@@ -44,23 +45,31 @@ export default function ContractForm() {
     });
 
     if (res.ok) {
-      alert("Contract created successfully!");
-      router.push("/contractsLive");
+      setAlertMessage("Contract created successfully! Redirecting to home...");
+      setAlertType("success");
+      setTimeout(() => {
+        router.push("/");
+      }, 5000);
     } else {
       const errorData = await res.json();
-      alert(`Failed to create contract: ${errorData.message}`);
+      setAlertMessage(`Failed to create contract: ${errorData.message}`);
+      setAlertType("error");
     }
   };
 
   return (
-    <Card className="max-w-lg mx-auto py-10 bg-white">
-      <CardHeader>
-        <CardTitle>Create a New Contract</CardTitle>
+    <Card className="max-w-lg mx-auto py-10 bg-white rounded-xl shadow-xl border border-gray-200">
+      <CardHeader className="pb-6 text-center">
+        <CardTitle className="text-2xl font-bold text-gray-800">
+          Create a New Contract
+        </CardTitle>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <Label htmlFor="walletAddress"> Wallet Address</Label>
+            <Label htmlFor="walletAddress" className="text-gray-600">
+              Wallet Address
+            </Label>
             <Input
               id="walletAddress"
               type="text"
@@ -68,12 +77,14 @@ export default function ContractForm() {
               onChange={(e) => setWalletAddress(e.target.value)}
               required
               placeholder="Enter your wallet address"
-              className="rounded-2xl"
+              className="rounded-xl border border-gray-300 p-3 focus:ring-2 focus:ring-teal-300 transition duration-200"
             />
           </div>
 
           <div>
-            <Label htmlFor="cropType">Crop Type</Label>
+            <Label htmlFor="cropType" className="text-gray-600">
+              Crop Type
+            </Label>
             <Input
               id="cropType"
               type="text"
@@ -81,12 +92,14 @@ export default function ContractForm() {
               onChange={(e) => setCropType(e.target.value)}
               required
               placeholder="Enter crop type"
-              className="rounded-2xl"
+              className="rounded-xl border border-gray-300 p-3 focus:ring-2 focus:ring-teal-300 transition duration-200"
             />
           </div>
 
           <div>
-            <Label htmlFor="quantity">Quantity (in kg)</Label>
+            <Label htmlFor="quantity" className="text-gray-600">
+              Quantity (in kg)
+            </Label>
             <Input
               id="quantity"
               type="number"
@@ -94,23 +107,28 @@ export default function ContractForm() {
               onChange={(e) => setQuantity(e.target.value)}
               required
               placeholder="Enter quantity in kg"
-              className="rounded-2xl"
+              className="rounded-xl border border-gray-300 p-3 focus:ring-2 focus:ring-teal-300 transition duration-200"
             />
           </div>
 
           <div>
-            <Label htmlFor="deadline">Delivery Deadline</Label>
+            <Label htmlFor="deadline" className="text-gray-600">
+              Delivery Deadline
+            </Label>
             <Input
               id="deadline"
               type="date"
               value={deadline}
               onChange={(e) => setDeadline(e.target.value)}
               required
-              className="rounded-2xl"
+              className="rounded-xl border border-gray-300 p-3 focus:ring-2 focus:ring-teal-300 transition duration-200"
             />
           </div>
+
           <div>
-            <Label htmlFor="phoneNumber">Phone Number</Label>
+            <Label htmlFor="phoneNumber" className="text-gray-600">
+              Phone Number
+            </Label>
             <Input
               id="phoneNumber"
               type="text"
@@ -118,11 +136,14 @@ export default function ContractForm() {
               onChange={(e) => setPhoneNumber(e.target.value)}
               required
               placeholder="Enter your phone number"
-              className="rounded-2xl"
+              className="rounded-xl border border-gray-300 p-3 focus:ring-2 focus:ring-teal-300 transition duration-200"
             />
           </div>
+
           <div>
-            <Label htmlFor="pricePerKg">Price Per Kg </Label>
+            <Label htmlFor="pricePerKg" className="text-gray-600">
+              Price Per Kg
+            </Label>
             <Input
               id="pricePerKg"
               type="number"
@@ -130,17 +151,29 @@ export default function ContractForm() {
               onChange={(e) => setPricePerKg(e.target.value)}
               required
               placeholder="Enter price per kg"
-              className="rounded-2xl"
+              className="rounded-xl border border-gray-300 p-3 focus:ring-2 focus:ring-teal-300 transition duration-200"
             />
           </div>
-          <CardFooter>
+
+          <CardFooter className="pt-6">
             <Button
               type="submit"
-              className="w-full bg-teal-200 text-black hover:bg-black hover:text-white rounded-2xl"
+              className="w-full py-3 bg-gradient-to-r from-teal-400 to-blue-400 text-white font-semibold rounded-xl hover:from-teal-500 hover:to-blue-500 transition duration-200 shadow-md hover:shadow-lg"
             >
               Create Contract
             </Button>
           </CardFooter>
+
+          {/* Alert Box */}
+          {alertMessage && (
+            <div
+              className={`mt-4 p-4 rounded-xl text-white ${
+                alertType === "success" ? "bg-green-500" : "bg-red-500"
+              }`}
+            >
+              {alertMessage}
+            </div>
+          )}
         </form>
       </CardContent>
     </Card>
