@@ -5,6 +5,7 @@ import Dashboard from "@/components/Dashboard";
 import { FaqAccordian } from "@/components/FaqAccordian";
 import FeaturesBento from "@/components/FeaturesBento";
 import Footer from "@/components/Footer";
+import NewFooter from "@/components/NewFooter";
 import NewHero from "@/components/NewHero";
 import Services from "@/components/Services";
 import { useSession } from "next-auth/react";
@@ -37,7 +38,8 @@ export default function Home() {
             <Services />
             <FeaturesBento />
             <FaqAccordian />
-            <Footer />
+            {/* <Footer /> */}
+            <NewFooter />
           </div>
         </>
       )}

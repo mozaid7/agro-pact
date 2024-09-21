@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Container } from "./container";
+import { Container } from "./ui/container";
 import Image from "next/image";
 import { FaSquareXTwitter } from "react-icons/fa6";
 
