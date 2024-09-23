@@ -88,11 +88,11 @@ const config: Config = {
         purple: "#CBACF9",
       },
       keyframes: {
-          "border-beam": {
-            "100%": {
-              "offset-distance": "100%",
-            },
+        "border-beam": {
+          "100%": {
+            "offset-distance": "100%",
           },
+        },
         marquee: {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(calc(-100% - var(--gap)))" },
@@ -165,7 +165,21 @@ const config: Config = {
             transform: "translate(calc(-50% - 0.5rem))",
           },
         },
+        zap: {
+          "0%, 9%, 11%, 100% ": {
+            fill: "transparent",
+          },
+          "10%": {
+            fill: "white",
+          },
+        },
+        bounce: {
+          "50%": {
+            transform: "scale(0.98)",
+          },
+        },
       },
+
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
@@ -181,18 +195,25 @@ const config: Config = {
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
         marquee: "marquee var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+        "sketch-lines": "sketch-lines 1200ms ease-out forwards",
+        "glow-line-horizontal":
+          "glow-line-horizontal var(--animation-duration) ease-in forwards",
+        "glow-line-vertical":
+          "glow-line-vertical var(--animation-duration) ease-in forwards",
+        zap: "zap 2250ms calc(var(--index) * 20ms) linear infinite",
+        bounce: "240ms ease 0s 1 running bounce",
       },
     },
   },
   plugins: [require("tailwindcss-animate"), addVariablesForColors],
 };
 
-function addVariablesForColors({ addBase, theme }:any) {
+function addVariablesForColors({ addBase, theme }: any) {
   let allColors = flattenColorPalette(theme("colors"));
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
-  
+
   addBase({
     ":root": newVars,
   });
