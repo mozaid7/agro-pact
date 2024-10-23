@@ -1,5 +1,3 @@
-import Navbar from "@/components/Nav";
-import { NavbarDemo } from "@/components/Navbar";
 import React from "react";
 
 export default function layout({

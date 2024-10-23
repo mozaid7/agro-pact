@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Container } from "./ui/container";
 import Image from "next/image";
-import { FaSquareXTwitter } from "react-icons/fa6";
 
 const footerLinks = [
   {
@@ -30,15 +29,21 @@ const footerLinks = [
 const currentYear = new Date().getFullYear();
 
 const Footer = () => (
-
-
   <footer className="mt-12 border-8 border-black rounded-3xl py-12 md:py-[5.6rem] text-sm bg-[#1e1b19] text-white md:px-6">
     <Container className="flex flex-col justify-between lg:flex-row">
       <div>
         <div className="flex h-full flex-row justify-between lg:flex-col">
           <div className="flex justify-center items-center text-grey">
-            <Image className="mr-2" src="/agropact.svg" width={40} height={40} alt="agropact" />
-            <span className="text-3xl tracking-tighter font-bold">Agro Pact</span>
+            <Image
+              className="mr-2"
+              src="/agropact.svg"
+              width={40}
+              height={40}
+              alt="agropact"
+            />
+            <span className="text-3xl tracking-tighter font-bold">
+              Agro Pact
+            </span>
           </div>
           {/* <div className="mt-auto flex space-x-4 text-grey">
           <FaSquareXTwitter />
@@ -72,11 +77,15 @@ const Footer = () => (
 
     <div className="h-[1px] mx-8 w-auto bg-zinc-600 my-8"></div>
 
-    <div className='grid grid-cols-1 md:flex w-full *:text-center justify-between px-6 text-sm'>
+    <div className="grid grid-cols-1 md:flex w-full *:text-center justify-between px-6 text-sm">
       <p>©️ {currentYear} Agro Pact. All Rights Reserved.</p>
-      <div className=' flex justify-center md:justify-end gap-4'>
-        <a href='/terms' target='_blank'>Privacy Policy</a>
-        <a href='/terms' target='_blank'>Terms & Conditions</a>
+      <div className=" flex justify-center md:justify-end gap-4">
+        <a href="/terms" target="_blank">
+          Privacy Policy
+        </a>
+        <a href="/terms" target="_blank">
+          Terms & Conditions
+        </a>
       </div>
     </div>
   </footer>

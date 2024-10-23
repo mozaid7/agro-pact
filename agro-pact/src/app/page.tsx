@@ -1,5 +1,7 @@
 "use client";
+
 import ClientNavbar from "@/components/ClientNav";
+
 import ContractList from "@/components/ContractList";
 import Dashboard from "@/components/Dashboard";
 import { FaqAccordian } from "@/components/FaqAccordian";

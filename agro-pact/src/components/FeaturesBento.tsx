@@ -1,11 +1,10 @@
-import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
+import { CalendarIcon } from "@radix-ui/react-icons";
 import { BellIcon, Share2Icon } from "lucide-react";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { AnimatedBeamMultipleOutput } from "./ui/animated-beam-multiple-output";
 import { ZapIllustration } from "./ui/zap";
 import { AnimatedListNotifications } from "./FeatureNotification";
 import { CommandMenu } from "./ui/command-menu";
-
 
 const features = [
   {
@@ -61,11 +60,11 @@ const features = [
 export default function FeaturesBento() {
   return (
     <div className="px-56 h-auto w-full flex justify-center items-center">
-    <BentoGrid>
-      {features.map((feature) => (
-        <BentoCard key={feature.name} {...feature} />
-      ))}
-    </BentoGrid>
-      </div>
+      <BentoGrid>
+        {features.map((feature) => (
+          <BentoCard key={feature.name} {...feature} />
+        ))}
+      </BentoGrid>
+    </div>
   );
 }
