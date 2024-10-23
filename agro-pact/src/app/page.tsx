@@ -34,8 +34,8 @@ export default function Home() {
           <ClientNavbar />
           <NewHero />
           <div className="px-4 md:px-24 sm:px-10">
-            <Services />
             <FeaturesBento />
+            <Services />
             <FaqAccordian />
             {/* <Footer /> */}
             <NewFooter />
