@@ -4,7 +4,6 @@ import ContractList from "@/components/ContractList";
 import Dashboard from "@/components/Dashboard";
 import { FaqAccordian } from "@/components/FaqAccordian";
 import FeaturesBento from "@/components/FeaturesBento";
-import Footer from "@/components/Footer";
 import NewFooter from "@/components/NewFooter";
 import NewHero from "@/components/NewHero";
 import Services from "@/components/Services";
