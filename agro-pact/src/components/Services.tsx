@@ -1,5 +1,5 @@
 import { AiOutlineBulb } from "react-icons/ai";
-import { MdOutlineFileUpload, MdPublish } from "react-icons/md";
+import { MdOutlineFileUpload } from "react-icons/md";
 import { PiLeaf } from "react-icons/pi";
 import { TbWorldDollar } from "react-icons/tb";
 

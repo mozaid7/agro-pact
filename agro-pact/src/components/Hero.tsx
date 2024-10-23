@@ -3,9 +3,9 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React from "react";
 import Dashboard from "./Dashboard";
-import ClientNav from "./ClientNav";
 import { BiLeaf } from "react-icons/bi";
 import { MdOutlineArrowOutward } from "react-icons/md";
+import NavbarClient from "./NavbarClient";
 
 const Hero = () => {
   const { data: session } = useSession();
@@ -21,7 +21,7 @@ const Hero = () => {
 
   return (
     <>
-      <ClientNav />
+      <NavbarClient />
 
       {session ? <Dashboard /> : null}
       {!session && (

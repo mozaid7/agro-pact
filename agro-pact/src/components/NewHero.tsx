@@ -1,12 +1,7 @@
-import ClientNav from "./ClientNav";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import Image from "next/image";
 import DashboardScreenDemo from "./DashboardScreenDemo";
-
-const fadeInVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.5 } },
-};
+import NavbarClient from "./NavbarClient";
 
 const SECTION_HEIGHT = 200;
 
@@ -66,7 +61,7 @@ const Hero = () => {
 const NewHero = () => {
   return (
     <>
-      <ClientNav />
+      <NavbarClient />
       <div className="bg-[#e4efe6]">
         <ReactLenis
           root
