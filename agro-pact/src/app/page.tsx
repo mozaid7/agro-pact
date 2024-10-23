@@ -1,6 +1,6 @@
 "use client";
 
-import ClientNavbar from "@/components/ClientNav";
+import ClientNav from "@/components/ClientNav";
 
 import ContractList from "@/components/ContractList";
 import Dashboard from "@/components/Dashboard";
@@ -25,7 +25,7 @@ export default function Home() {
 
           {/* Main content area */}
           <div className="flex-1">
-            <ClientNavbar />
+            <ClientNav />
             <div className="p-4">
               <ContractList />
             </div>
@@ -33,7 +33,7 @@ export default function Home() {
         </div>
       ) : (
         <>
-          <ClientNavbar />
+          <ClientNav />
           <NewHero />
           <div className="px-4 md:px-24 sm:px-10">
             <FeaturesBento />
