@@ -6,7 +6,8 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { getUserContracts } from "@/lib/server-actions";
 
-interface Contract {
+// ✅ Define a local UI-friendly contract type (no `updatedAt`)
+interface UIContract {
   id: number;
   walletAddress: string;
   cropType: string;
@@ -16,12 +17,11 @@ interface Contract {
   pricePerKg: number;
   userId: number;
   createdAt: string;
-  updatedAt: string;
 }
 
 export default function ContractList() {
   const { data: session } = useSession();
-  const [contracts, setContracts] = useState<Contract[]>([]);
+  const [contracts, setContracts] = useState<UIContract[]>([]);
   const [error, setError] = useState<string>("");
 
   useEffect(() => {
@@ -34,8 +34,7 @@ export default function ContractList() {
       const result = await getUserContracts(parseInt(session.user.id));
 
       if (result.success) {
-        // Explicitly cast to local Contract type to resolve type mismatch
-        setContracts(result.contracts as Contract[]);
+        setContracts(result.contracts as UIContract[]);
         setError("");
       } else {
         setError(result.message ?? "");

@@ -4,16 +4,16 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-interface Contract {
+interface PublicContract {
   id: number;
   walletAddress: string;
   cropType: string;
   quantity: number;
-  deadline: string; 
+  deadline: string;
   phoneNumber: string;
   pricePerKg: number;
   userId: number;
-  createdAt: string; 
+  createdAt: string;
 }
 
 export async function createContract(formData: FormData, userId: number) {
@@ -31,25 +31,17 @@ export async function createContract(formData: FormData, userId: number) {
     if (
       !contractData.walletAddress ||
       !contractData.cropType ||
-      !contractData.quantity ||
+      isNaN(contractData.quantity) ||
       !contractData.deadline ||
       !contractData.phoneNumber ||
-      !contractData.pricePerKg ||
+      isNaN(contractData.pricePerKg) ||
       !contractData.userId
     ) {
-      throw new Error("All fields are required");
+      throw new Error("All fields are required and must be valid");
     }
 
     const contract = await prisma.contract.create({
-      data: {
-        walletAddress: contractData.walletAddress,
-        cropType: contractData.cropType,
-        quantity: contractData.quantity,
-        deadline: contractData.deadline,
-        phoneNumber: contractData.phoneNumber,
-        pricePerKg: contractData.pricePerKg,
-        userId: contractData.userId,
-      },
+      data: contractData,
     });
 
     return {
@@ -68,23 +60,27 @@ export async function createContract(formData: FormData, userId: number) {
 
 export async function getUserContracts(userId: number): Promise<{
   success: boolean;
-  contracts: Contract[];
+  contracts: PublicContract[];
   message?: string;
 }> {
   try {
-    console.log("Fetching contracts for userId:", userId); 
     const contracts = await prisma.contract.findMany({
       where: { userId },
       orderBy: { createdAt: "desc" },
     });
 
-    const formattedContracts: Contract[] = contracts.map((contract) => ({
-      ...contract,
+    const formattedContracts: PublicContract[] = contracts.map((contract) => ({
+      id: contract.id,
+      walletAddress: contract.walletAddress,
+      cropType: contract.cropType,
+      quantity: contract.quantity,
       deadline: contract.deadline.toISOString(),
+      phoneNumber: contract.phoneNumber,
+      pricePerKg: contract.pricePerKg,
+      userId: contract.userId,
       createdAt: contract.createdAt.toISOString(),
     }));
 
-    console.log("Contracts found:", formattedContracts); 
     return { success: true, contracts: formattedContracts };
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : "Unknown error";
