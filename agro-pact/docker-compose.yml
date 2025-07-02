@@ -13,5 +13,18 @@ services:
     ports:
       - "5433:5432"
 
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/prisma_db?schema=public
+    depends_on:
+      - db
+    volumes:
+      - .:/usr/src/app
+
 volumes:
   postgres_data:
